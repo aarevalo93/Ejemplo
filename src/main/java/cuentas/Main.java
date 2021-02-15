@@ -10,8 +10,15 @@ public class Main {
     }
 
     private static void operativo_cuenta(float cantidad) {
-        CCuenta cuenta1;
+        CCuenta cuenta1 = null;
         double saldoActual;
+        try {
+            System.out.println("Ingreso en cuenta");
+            cuenta1.ingresar(1000);
+        } catch (Exception e) {
+            System.out.print("Fallo al ingresar");
+        }
+
         cuenta1 = new CCuenta("Antonio López", "1000-2365-85-1230456789", 2500, 0);
         saldoActual = cuenta1.estado();
         System.out.println("El saldo actual es" + saldoActual);
